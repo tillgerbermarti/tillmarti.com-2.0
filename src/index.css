@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Navigation Styles */
+.nav-link {
+  @apply relative text-sm tracking-wide font-light transition-all duration-300;
+  @apply after:absolute after:bottom-0 after:left-0 after:w-full after:h-px;
+  @apply after:bg-orange-400 after:scale-x-0 after:transition-transform after:duration-300;
+  @apply text-white/80;
+}
+
+/* Hover states */
+.nav-link:hover {
+  @apply text-orange-400;
+}
+
+.nav-link:hover:after {
+  @apply scale-x-100;
+}
+
+/* Navigation background gradient on scroll */
+nav[data-scrolled="true"] {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+}
